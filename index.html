@@ -12,24 +12,67 @@
 </head>
 <body>
     <div id="love-widget" class="widget">
-        <h2>Cosas que Amo de Ti</h2>
+        <h2 id="section-title">Cosas que Amo de Ti</h2>
         <div id="love-message" class="message"></div>
         <button id="next-message">Siguiente Mensaje</button>
+
+        <div class="controls">
+            <label for="emoji-selector">Reacciona con un emoji:</label>
+            <select id="emoji-selector">
+                <option value="❤️">❤️</option>
+                <option value="😂">😂</option>
+                <option value="😍">😍</option>
+                <option value="😭">😭</option>
+                <option value="😡">😡</option>
+                <option value="👍">👍</option>
+            </select>
+            <button id="add-reaction">Agregar Emoji</button>
+        </div>
+
         <div class="controls">
             <label for="theme-color">Color del Tema:</label>
             <input type="color" id="theme-color" name="theme-color" value="#ff4081">
         </div>
+
         <div class="controls">
             <label for="background-selector">Fondo:</label>
             <select id="background-selector">
                 <option value="estrellas">Estrellas</option>
                 <option value="flores">Flores</option>
                 <option value="corazones">Corazones</option>
-                <option value="snoopycor">snoopycor</option>
-                <option value="snoopyflo">snoopyflo</option>
+                <option value="snoopycor">Snoopy Corazones</option>
+                <option value="snoopyflo">Snoopy Flores</option>
+              <option value="fatbird">fatbird</option>
+                <option value="snoopylov">Snoopy Love</option>
+                <option value="luna">Luna</option>
+                 <option value="nosotros">nosotros</option> 
+                 <option value="descanso">descanso</option> 
+                 <option value="snooppit">snooppit</option> 
+                 <option value="snoopty">snoopty</option> 
+                 <option value="turtleart">turtleart</option> 
+                 <option value="secret2">secret2</option> 
+                 <option value="secret1">secret1</option> 
+                 <option value="nubes">nubes</option> 
+               
             </select>
         </div>
+
+        <div class="controls">
+            <button id="toggle-history">Historial</button>
+        </div>
     </div>
+
+    <div id="reaction-history" class="widget">
+        <h3>Historial de Reacciones</h3>
+        <div id="reactions-container"></div>
+    </div>
+
+    <div id="video-overlay" class="video-overlay hidden">
+        <video id="confetti-video" autoplay muted playsinline>
+            <source src="confetti.mp4" type="video/mp4">
+        </video>
+    </div>
+
     <script src="3.js"></script>
 </body>
 </html>
