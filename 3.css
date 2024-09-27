@@ -1,15 +1,23 @@
+/* Estilos generales */
 body {
     font-family: 'Arial', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     height: 100vh;
     margin: 0;
     background-color: #f8e5e5;
-    -webkit-touch-callout: none;
-    background-size: cover; /* Asegura que el fondo cubra toda la pantalla */
-    background-position: center; /* Centra la imagen de fondo */
-    background-repeat: no-repeat; /* Evita que el fondo se repita */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
 }
 
 .widget {
@@ -20,9 +28,11 @@ body {
     text-align: center;
     max-width: 300px;
     width: 100%;
+    margin-bottom: 20px;
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-h2 {
+h2, h3 {
     color: #ff4081;
     margin-bottom: 20px;
 }
@@ -56,6 +66,29 @@ button:hover {
     margin-top: 15px;
 }
 
+.video-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.video-overlay.hidden {
+    display: none;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 /* Fondos personalizados */
 body.estrellas {
     background-image: url('estrellas.png');
@@ -69,10 +102,98 @@ body.corazones {
     background-image: url('corazones.png');
 }
 
+body.snoopylov {
+    background-image: url('snoopylov.png');
+}
+
+body.luna {
+    background-image: url('luna.png');
+}
+
 body.snoopyflo {
     background-image: url('snoopyflo.png');
 }
 
 body.snoopycor {
     background-image: url('snoopycor.png');
+   
+}
+body.nosotros { 
+    background-image: url('nosotros.png');
+}
+
+body.descanso { 
+    background-image: url('descanso.png');
+}
+
+body.snoopty { 
+    background-image: url('snoopty.png');
+}
+
+body.turtleart { 
+    background-image: url('turtleart.png');
+}
+
+body.secret2 { 
+    background-image: url('secret2.png');
+}
+
+body.secret1 { 
+    background-image: url('secret1.png');
+}
+
+body.nubes { 
+    background-image: url('nubes.png');
+}
+
+
+body.snooppit { 
+    background-image: url('snooppit.png');
+}
+
+
+
+body.fatbird { 
+    background-image: url('fatbird.png');
+}
+
+/* Historial de Reacciones */
+#reaction-history {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+    max-width: 300px;
+    width: 100%;
+    margin-top: 20px;
+    transition: background-color 0.5s ease, color 0.5s ease;
+    display: none;
+    overflow-y: auto;
+    max-height: 200px;
+}
+
+#reactions-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 5px;
+    text-align: left;
+    font-size: 14px;
+    border-top: 1px solid #ddd;
+}
+
+#toggle-history {
+    background-color: #ff4081;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+#toggle-history:hover {
+    background-color: #e91e63;
 }
