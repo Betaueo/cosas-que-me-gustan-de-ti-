@@ -11,6 +11,48 @@
     <link rel="apple-touch-icon" href="mmm.png">
 </head>
 <body>
+    
+    <!-- PANTALLA NEGRA DE INTRODUCCIÓN (NUEVO) -->
+    <div id="intro-overlay" class="hidden">
+        <div class="intro-content">
+            <p id="typewriter-text"></p>
+            <button id="btn-entrar-app" class="hidden fade-in">Guardar en mi corazón y Continuar ❤️</button>
+        </div>
+    </div>
+
+    <!-- BOTÓN FLOTANTE DE RECUERDOS (NUEVO) -->
+    <button id="btn-recuerdos" class="floating-btn">
+        ✉️ Recuerdos
+        <span id="notif-dot" class="notification-dot hidden"></span>
+    </button>
+
+    <!-- MODAL DE RECUERDOS Y BUZÓN (NUEVO) -->
+    <div id="modal-recuerdos" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn" id="close-modal">&times;</span>
+            <div class="modal-header">
+                <h3>Buzón de Nuestro Amor</h3>
+            </div>
+            
+            <div class="tabs">
+                <button class="tab-btn active" data-target="tab-carta">La Carta</button>
+                <button class="tab-btn" data-target="tab-buzon">Enviar Mensaje</button>
+            </div>
+
+            <div id="tab-carta" class="tab-content active">
+                <p class="carta-texto">Hola cómo has estado. Sigues igual de hermosa como siempre, no te he visto en un buen tiempo pero supongo que si. No dejes de cuidarte, de arreglarte, de salir, de vivir, supongo que estas aquí porq te acuerdas de este pequeño detalle que te hice. Recuerda que aquí esta el inicio de todas las cosas lindas que pienso de ti, y honestamente, aún lo sigo haciendo, no sé pero no dejo de pesnar en ti, en tu olor, en tu sonrisa, en tus hermosas pestañas, en tu piel, en lo delgada, en lo lista, en lo fuerte emocionalmente, en lo sarcastica, en lo loca, en lo amorosa, en todo, solo quiero que sepas que espero que logres todas tus metas. Y espero sigas siendo esa mujer tan dedicada que fuiste. Te amo y aun lo seguire haciendo. Ódiame todo lo que quieras pero, siempre recuerda q mi corazón esta para ti, suerte y que Dios te bendiga, mi hermosa mujer de ojos brillantes.</p>
+            </div>
+
+            <div id="tab-buzon" class="tab-content hidden">
+                <p class="instruccion-buzon">¿Quieres decirme algo? Escríbelo aquí:</p>
+                <textarea id="mensaje-input" rows="5" placeholder="Escribe lo que sientes..."></textarea>
+                <button id="btn-enviar-mensaje">Dejar Mensaje 🕊️</button>
+                <p id="mensaje-status" class="hidden status-msg"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- WIDGET PRINCIPAL ORIGINAL -->
     <div id="love-widget" class="widget">
         <h2 id="section-title">Cosas que Amo de Ti</h2>
         <div id="love-message" class="message"></div>
@@ -42,18 +84,17 @@
                 <option value="corazones">Corazones</option>
                 <option value="snoopycor">Snoopy Corazones</option>
                 <option value="snoopyflo">Snoopy Flores</option>
-              <option value="fatbird">fatbird</option>
+                <option value="fatbird">fatbird</option>
                 <option value="snoopylov">Snoopy Love</option>
                 <option value="luna">Luna</option>
-                 <option value="nosotros">nosotros</option> 
-                 <option value="descanso">descanso</option> 
-                 <option value="snooppit">snooppit</option> 
-                 <option value="snoopty">snoopty</option> 
-                 <option value="turtleart">turtleart</option> 
-                 <option value="secret2">secret2</option> 
-                 <option value="secret1">secret1</option> 
-                 <option value="nubes">nubes</option> 
-               
+                <option value="nosotros">nosotros</option> 
+                <option value="descanso">descanso</option> 
+                <option value="snooppit">snooppit</option> 
+                <option value="snoopty">snoopty</option> 
+                <option value="turtleart">turtleart</option> 
+                <option value="secret2">secret2</option> 
+                <option value="secret1">secret1</option> 
+                <option value="nubes">nubes</option> 
             </select>
         </div>
 
@@ -67,6 +108,7 @@
         <div id="reactions-container"></div>
     </div>
 
+    <!-- VIDEO OVERLAY ORIGINAL -->
     <div id="video-overlay" class="video-overlay hidden">
         <video id="confetti-video" autoplay muted playsinline>
             <source src="confetti.mp4" type="video/mp4">
